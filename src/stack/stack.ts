@@ -9,56 +9,48 @@ export class Stack<T> {
     }
 
     /**
-     * Acrescenta um novo elemento á pilha
-     * @param {T} value
+     * Pushes a new element onto the stack
+     * @param { T } value
      */
-    acrescentar(value:T){
+    push(value:T){
         this.data.push(value);
     }
 
     /**
-     * Retorna o primeiro elemento da pilha
+     * Returns the top element of the stack
      * @returns T | undefined
      */
-    obterProximo(): T|undefined  {
-        if(this.estaVazia()){
+    peek(): T|undefined  {
+        if(this.isEmpty()){
             return;
         }
         return this.data[this.data.length - 1];
     }
 
     /**
-     * Retorna verdadeiro se a pilha estiver vazia
+     * Returns true if the stack is empty
      * @returns boolean
      */
-     estaVazia(): boolean {
-         return this.data.length == 0;
+    isEmpty(): boolean {
+        return this.data.length == 0;
     }
 
     /**
-     * Remove o ultimo elemento da pilha e retorna ele
+     * Removes and returns the top element of the stack
      * @returns T | undefined
      */
-    removerUltimoeRetornarEle(): T | undefined{
-        if(this.estaVazia()){
+    pop(): T | undefined{
+        if(this.isEmpty()){
             return ;
         }
         return this.data.pop();
     }
 
     /**
-     * retorna uma representação em string da pilha
+     * Returns a string representation of the stack
      * @param [callback]
      */
     toString(callback?: (value: T) => string){
-        return this.toArray().map(i => callback ? callback(i): `${i}`).join(',');
-    }
-
-    /**
-     * Retorna um array que representa a pilha
-     * @returns T[]
-     */
-    toArray(): T[] {
-        return[...this.data].reverse();
+        return this.data.map(i => callback ? callback(i): `${i}`).join(',');
     }
 }
