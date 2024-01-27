@@ -1,65 +1,59 @@
-/**
- * @export
- * @class Queue
- */
-
 export class Queue<T> {
-    fila: T[];
+    private queue: T[];
 
-    /**
-     * Cria uma instancia de Queue
-     * @memberof Queue
-     */
     constructor() {
-        this.fila= [];
+        this.queue = [];
     }
 
     /**
-     * Insere um novo item no final da fila
-     * @param {*} item
-     * @return {Queue}
-     * @memberof Queue
+     * @param item The item to be added to the queue.
      */
-    enfileirar(item: T):T {
-        this.fila=[...this.fila,item];
+    enqueue(item: T): T {
+        this.queue.push(item);
         return item;
     }
 
     /**
-     * Remove o ultimo item da fila e retorna ele
-     * @return {Queue}
-     * @memberof Queue
+     * @returns The item at the front of the queue.
+     * @throws Error if the queue is empty.
      */
-    desenfileirar(): T {
-        const item = this.fila[0];
-        this.fila = this.fila.slice(1);
-        return item;
+    dequeue(): T | undefined{
+        if (this.queue.length === 0) {
+            throw new Error("Queue is empty");
+        }
+        return this.queue.shift();
     }
 
     /**
-     * Verifica se a lista está vazia
-     * @return {boolean}
-     * @memberof Queue
+     * @returns The item at the front of the queue.
+     * @throws Error if the queue is empty.
      */
-    estaVazia(): boolean {
-        return this.fila.length == 0;
+    peek(): T {
+        if (this.queue.length === 0) {
+            throw new Error("Queue is empty");
+        }
+        return this.queue[0];
     }
 
     /**
-     * retorna o tamanho da fila atual
-     * @return {number}
-     * @memberof Queue
+     * Checks if the queue is empty.
+     * @returns True if the queue is empty, false otherwise.
      */
-    obterTamanho():number {
-        return this.fila.length;
+    isEmpty(): boolean {
+        return this.queue.length === 0;
     }
 
     /**
-     * Converte a fila atual para string e retorna a mesma
-     * @return {string}
-     * @memberof Queue
+     * @returns The number of items in the queue.
+     */
+    getSize(): number {
+        return this.queue.length;
+    }
+
+    /**
+     * @returns A string representation of the queue.
      */
     toString(): string {
-        return this.fila.toString();
+        return this.queue.join(',');
     }
 }
