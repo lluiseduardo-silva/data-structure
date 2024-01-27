@@ -55,7 +55,7 @@ export class HashTable<K, V> {
      */
     display(): void {
         for (const key in this.table) {
-            if (this.table.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(this.table, key)) {
                 console.log(`Key: ${key} - Value: ${this.table[key]}`);
             }
         }
