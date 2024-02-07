@@ -9,7 +9,13 @@
 - [x] Heaps
 - [x] Tries
 - [x] Sets
-
+- [x] Sorting:
+- -[x] Bubble Sort
+- - [x] Selection Sort
+- - [x] Insertion Sort
+- - [x] Merge Sort
+- - [x] Quick Sort
+- - [x] Heap Sort
 #### Arrays:
 Arrays (ou vetores) são coleções de elementos do mesmo tipo, armazenados em posições contíguas na memória.
 Permitem acesso rápido a um elemento em qualquer posição, usando um índice.
@@ -63,3 +69,11 @@ Uma árvore de pesquisa especializada que é usada para armazenar um conjunto di
 #### Sets:
 Coleção de elementos que não permite duplicatas.
 Pode ser implementado de várias maneiras, incluindo como uma tabela hash ou uma árvore.
+
+#### Sorting:
+- **Bubble Sort**: Possui uma complexidade de tempo média de *O ( n ^ 2 )*. É eficiente para pequenos conjuntos de dados, mas torna-se muito lento à medida que o número de elementos aumenta.
+- **Selection Sort**: Tem uma complexidade de tempo média de *O ( n ^ 2 )*. Também é menos eficiente para grandes conjuntos de dados, mas geralmente é mais rápido que o Bubble Sort em média.
+- **Insertion Sort**: Tem uma complexidade de tempo média de *O ( n ^ 2 )*, mas é mais eficiente que o Bubble Sort e o Selection Sort em muitos casos, especialmente para conjuntos de dados parcialmente ordenados ou pequenos.
+- **Merge Sort**: Tem uma complexidade de tempo média de *O ( n ^ n )*. É mais eficiente que os algoritmos anteriores para conjuntos de dados grandes e é um algoritmo de classificação estável.
+- **Quick Sort**: Tem uma complexidade de tempo média de *O ( n ^ n )*, mas pode degradar para O(n^2) no pior caso. No entanto, é frequentemente mais rápido que o Merge Sort na prática devido a constantes menores e menor uso de memória.
+- **Heap Sort**: Tem uma complexidade de tempo média de *O ( n ^ n )*. É eficiente e tem um desempenho constante em todos os casos, mas geralmente é menos rápido que o Quick Sort
