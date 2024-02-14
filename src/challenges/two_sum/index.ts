@@ -15,3 +15,4 @@ console.log(twoSum(nums1, target1)); // Resultado esperado [ 1, 2 ]
 const nums2 = [5, 10, 15, 20, 25];
 const target2 = 20;
 console.log(twoSum(nums2, target2)); // Resultado esperado: [1, 3]
+
